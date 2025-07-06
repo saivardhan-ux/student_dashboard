@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1e90ff;
+      --light-bg: #f9f9f9;
+      --dark-text: #333;
+      --light-text: #777;
+      --card-bg: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background-color: var(--light-bg);
+    }
+
+    nav {
+      width: 220px;
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 20px;
+    }
+
+    nav h2 {
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      display: block;
+      color: #ecf0f1;
+      padding: 10px;
+      text-decoration: none;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background: #34495e;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header .profile img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .dashboard-content {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .progress-bar {
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 12px;
+      margin-top: 5px;
+    }
+
+    .progress {
+      height: 100%;
+      background: var(--primary);
+    }
+
+    .deadlines ul {
+      list-style: none;
+    }
+
+    .deadline-item {
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      background: var(--primary);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 20px;
+      margin-right: 10px;
+      font-size: 0.85em;
+    }
+
+    .profile-info {
+      background: var(--card-bg);
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h2>Student Panel</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Subjects</a>
+    <a href="#">Attendance</a>
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+  </nav>
+
+  <main>
+    <header>
+      <h2>Dashboard</h2>
+      <div class="profile">
+        <i class="fas fa-bell"></i>
+        <span>John Doe</span>
+        <img src="https://via.placeholder.com/40" alt="Student Avatar">
+      </div>
+    </header>
+
+    <section class="dashboard-content">
+      <article class="card">
+        <h3>GPA</h3>
+        <p>3.75</p>
+      </article>
+      <article class="card">
+        <h3>Attendance</h3>
+        <p>92%</p>
+      </article>
+      <article class="card">
+        <h3>Assignments Due</h3>
+        <p>3</p>
+      </article>
+      <article class="card">
+        <h3>Total Credits</h3>
+        <p>120</p>
+      </article>
+    </section>
+
+    <section class="dashboard-content">
+      <article class="card">
+        <h3>Subject Progress</h3>
+        <table width="100%">
+          <tr><td>Math</td><td><div class="progress-bar"><div class="progress" style="width: 80%"></div></div></td></tr>
+          <tr><td>Physics</td><td><div class="progress-bar"><div class="progress" style="width: 65%"></div></div></td></tr>
+          <tr><td>History</td><td><div class="progress-bar"><div class="progress" style="width: 90%"></div></div></td></tr>
+        </table>
+      </article>
+
+      <article class="card deadlines">
+        <h3>Upcoming Deadlines</h3>
+        <ul>
+          <li class="deadline-item"><span class="badge">Jul 10</span> Submit Assignment 4</li>
+          <li class="deadline-item"><span class="badge">Jul 12</span> Group Presentation</li>
+          <li class="deadline-item"><span class="badge">Jul 15</span> Final Project Report</li>
+        </ul>
+      </article>
+
+      <article class="card profile-info">
+        <h3>Student Info</h3>
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Roll No:</strong> 22CS101</p>
+        <p><strong>Email:</strong> john.doe@example.com</p>
+        <p><strong>College:</strong> ABC University</p>
+        <p><strong>Department:</strong> Computer Science</p>
+      </article>
+    </section>
+  </main>
+
+</body>
+</html>
